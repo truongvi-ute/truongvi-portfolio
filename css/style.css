@@ -648,6 +648,18 @@ body::before {
     .main-content {
         flex-direction: column;
         padding: 20px;
+        min-height: auto;
+        max-height: none;
+        overflow-y: visible;
+    }
+    
+    .right-section {
+        overflow-y: visible;
+        margin-top: 0;
+    }
+    
+    .info-list {
+        margin-top: 20px;
     }
     
     .avatar-container {
@@ -676,5 +688,14 @@ body::before {
     .skill-list {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .map-container {
+        min-height: 300px;
     }
 }
