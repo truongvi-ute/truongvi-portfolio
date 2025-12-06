@@ -107,7 +107,7 @@
                     <div class="cloud-big"></div>
                     <h3>Chapter 7 - Download</h3>
                     <p>CD Download Exercise</p>
-                    <p>Practice Cookies</p>
+                    <p>Practice Sessions, Cookies</p>
                     <a href="https://btchuong7-download.onrender.com" target="_blank">View Assignment</a>
                 </div>
                 <div class="assignment-item">
@@ -249,7 +249,7 @@
                 <div class="footer-right">
                     <div class="map-container">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.4851719497364!2d106.76918257570653!3d10.849906989301086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752763f23816ab%3A0x282f711441b6916f!2zNDg0IEzDqiBWxINuIFZp4buHdCwgVMSDbmcgTmjGoW4gUGjDuiBBLCBUaOG7pyDEkOG7qWMsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1733420000000!5m2!1svi!2s" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.6395!2d106.7952143!3d10.845053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175273eedae4117%3A0x9876fccc67e05e41!2zS8O9IHTDumMgeMOhIEQyLCBU4bqhbmcgTmjGoW4gUGjDuiBBLCBUaOG7pyDEkOG7qWMsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1733500000000!5m2!1sen!2s" 
                             width="100%" 
                             height="100%" 
                             style="border:0;" 
@@ -340,10 +340,23 @@
             }
         }
 
+        // Track clicked assignments (only in current session)
+        function trackAssignmentClicks() {
+            const assignmentLinks = document.querySelectorAll('.assignment-item a');
+            
+            // Add click event listener
+            assignmentLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    this.classList.add('clicked');
+                });
+            });
+        }
+
         // Bắt đầu hiệu ứng khi trang load
         window.addEventListener('load', () => {
             setActiveNavLink();
             setTimeout(typeWriter, 500);
+            trackAssignmentClicks();
         });
     </script>
 </body>

@@ -163,8 +163,7 @@ body::before {
     border-radius: 15px;
     margin-bottom: 40px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    min-height: calc(100vh - 130px);
-    max-height: calc(100vh - 130px);
+    min-height: auto;
     scroll-margin-top: 70px;
 }
 
@@ -221,7 +220,7 @@ body::before {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    overflow-y: auto;
+    overflow-y: visible;
     justify-content: flex-start;
 }
 
@@ -383,6 +382,7 @@ body::before {
     color: #5483B3;
     font-size: 14px;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 /* Button */
@@ -398,10 +398,21 @@ body::before {
     box-shadow: 0 4px 10px rgba(84, 131, 179, 0.3);
 }
 
+.assignment-item a.clicked {
+    background: linear-gradient(135deg, #28a745 0%, #5cb85c 100%);
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
 .assignment-item a:hover {
     background: linear-gradient(135deg, #052659 0%, #5483B3 100%);
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(84, 131, 179, 0.5);
+}
+
+.assignment-item a.clicked:hover {
+    background: linear-gradient(135deg, #218838 0%, #28a745 100%);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.5);
 }
 
 /* Hover card */
