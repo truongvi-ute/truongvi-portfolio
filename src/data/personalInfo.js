@@ -2,7 +2,7 @@
 export const personalInfo = {
   name: "Trường Vĩ",
   fullName: "Nguyễn Đoàn Trường Vĩ",
-  title: "Gia Huy bị khùng",
+  title: "Software Engineer",
   role: "Full-stack Developer",
   
   // Hero Section - Giới thiệu ngắn gọn
