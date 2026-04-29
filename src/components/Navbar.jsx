@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { personalInfo } from "../data/personalInfo";
 import ThemeToggle from "./ThemeToggle";
+import DownloadButton from "./DownloadButton";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,15 +44,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-2">
       <div
         className={`max-w-6xl mx-auto transition-all duration-300 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-lg shadow-xl py-3 rounded-2xl"
-            : "bg-white/80 backdrop-blur-md shadow-lg py-4 rounded-2xl"
+            ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-xl py-1.5 rounded-2xl"
+            : "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg py-2 rounded-2xl"
         }`}
       >
-        <div className="px-6 flex items-center justify-between">
+        <div className="px-3 flex items-center justify-between">
           {/* Dark/Light Mode Toggle with Lottie */}
           <ThemeToggle />
 
@@ -62,28 +63,22 @@ const Navbar = () => {
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-slate-700 hover:text-blue-600 font-medium transition-colors relative group"
+                  className="text-slate-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-orange-500 font-medium transition-colors relative group"
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-orange-500 group-hover:w-full transition-all duration-300"></span>
                 </a>
               </li>
             ))}
           </ul>
 
           {/* Download CV Button - Desktop */}
-          <a
-            href={personalInfo.cta.secondary.link}
-            download
-            className="hidden lg:block px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-md hover:shadow-lg hover:scale-105"
-          >
-            Download CV
-          </a>
+          <DownloadButton />
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-slate-700 hover:text-blue-600 transition-colors"
+            className="lg:hidden p-2 text-slate-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-orange-500 transition-colors"
             aria-label="Toggle menu"
           >
             <svg
@@ -117,26 +112,20 @@ const Navbar = () => {
             isMobileMenuOpen ? "max-h-screen" : "max-h-0"
           }`}
         >
-          <ul className="border-t border-slate-200 py-4 px-6 space-y-3 mt-3">
+          <ul className="border-t border-slate-200 dark:border-gray-700 py-4 px-6 space-y-3 mt-3">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="block text-slate-700 hover:text-blue-600 font-medium py-2 transition-colors"
+                  className="block text-slate-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-orange-500 font-medium py-2 transition-colors"
                 >
                   {link.name}
                 </a>
               </li>
             ))}
-            <li className="pt-2">
-              <a
-                href={personalInfo.cta.secondary.link}
-                download
-                className="block text-center px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all"
-              >
-                Download CV
-              </a>
+            <li className="pt-2 flex justify-center">
+              <DownloadButton />
             </li>
           </ul>
         </div>

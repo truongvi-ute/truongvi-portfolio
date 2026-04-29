@@ -3,7 +3,7 @@ import Hero from "./sections/Hero";
 
 function App() {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
       <Navbar />
       <main>
         <Hero />

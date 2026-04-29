@@ -55,6 +55,15 @@ html {
 
 @keyframes blink-caret {
   0%, 100% {
+    border-color: #f97316;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes blink-caret-dark {
+  0%, 100% {
     border-color: #3b82f6;
   }
   50% {
@@ -66,11 +75,19 @@ html {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 3px solid #3b82f6; /* Cursor dọc màu xanh */
+  border-right: 3px solid #f97316; /* Cursor dọc màu cam - Light mode */
   animation: 
     typing-delete 6s steps(40, end) infinite,
     blink-caret 0.75s step-end infinite;
   max-width: fit-content;
+}
+
+/* Dark mode caret color - Đổi sang xanh */
+.dark .typing-text {
+  border-right-color: #3b82f6;
+  animation: 
+    typing-delete 6s steps(40, end) infinite,
+    blink-caret-dark 0.75s step-end infinite;
 }
 
 /* Font Consolas fallback */

@@ -43,17 +43,17 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className="transition-all hover:scale-110 active:scale-95"
+      className="transition-all hover:scale-110 active:scale-95 overflow-hidden"
       aria-label="Toggle dark mode"
       style={{ background: "transparent", border: "none", padding: 0 }}
     >
-      <div className="w-12 h-12">
+      <div className="w-16 h-10 overflow-hidden flex items-center justify-center">
         <Lottie
           lottieRef={lottieRef}
           animationData={themeAnimation}
           loop={false}
           autoplay={false}
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "100%", height: "150%" }}
         />
       </div>
     </button>

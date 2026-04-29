@@ -5,24 +5,24 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50 pt-32 md:pt-20 px-6 overflow-hidden"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pt-32 md:pt-20 px-6 overflow-hidden transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* CỘT 1: GIỚI THIỆU NGẮN GỌN */}
         <div className="order-2 md:order-1 text-center md:text-left">
-          {/* Title với hiệu ứng typing */}
+          {/* Title với hiệu ứng typing - NGƯỢC LẠI */}
           <div className="mb-6 flex items-center justify-center md:justify-start">
-            <span className="text-slate-500 font-mono text-xl md:text-2xl font-semibold">&lt;</span>
-            <span className="text-orange-500 font-mono text-xl md:text-2xl font-semibold typing-text">
+            <span className="text-slate-500 dark:text-gray-400 font-mono text-xl md:text-2xl font-semibold">&lt;</span>
+            <span className="text-orange-500 dark:text-blue-600 font-mono text-xl md:text-2xl font-semibold typing-text">
               {personalInfo.title}
             </span>
-            <span className="text-slate-500 font-mono text-xl md:text-2xl font-semibold">/&gt;</span>
+            <span className="text-slate-500 dark:text-gray-400 font-mono text-xl md:text-2xl font-semibold">/&gt;</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 leading-tight">
-            <span className="text-blue-600">{personalInfo.name}</span>
+          <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight transition-colors duration-300">
+            <span className="text-blue-600 dark:text-orange-500">{personalInfo.name}</span>
           </h1>
-          <p className="text-xl text-slate-600 mb-8 max-w-lg leading-relaxed">
+          <p className="text-xl text-slate-600 dark:text-gray-300 mb-8 max-w-lg leading-relaxed transition-colors duration-300">
             {personalInfo.tagline}
           </p>
         </div>
@@ -30,13 +30,13 @@ const Hero = () => {
         {/* CỘT 2: ẢNH CHÂN DUNG - OUT OF BOUNDS EFFECT */}
         <div className="order-1 md:order-2 flex justify-center items-center">
           <div className="relative group w-56 h-56 md:w-72 md:h-72">
-            {/* Khung nền trang trí - Layer 1 - Màu Cam */}
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 rounded-[2rem] transform rotate-3 transition-all duration-500 group-hover:rotate-6 group-hover:scale-105 shadow-2xl"></div>
+            {/* Khung nền trang trí - Layer 1 */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 dark:from-orange-500 dark:to-orange-600 rounded-[2rem] transform rotate-3 transition-all duration-500 group-hover:rotate-6 group-hover:scale-105 shadow-2xl"></div>
 
-            {/* Khung chứa với border - Layer 2 */}
-            <div className="absolute inset-0 bg-white rounded-[2rem] border-4 border-white shadow-2xl transform transition-all duration-500 group-hover:scale-105 overflow-hidden">
+            {/* Khung chứa với border - Layer 2 - Màu viền cùng với title (ngược lại) */}
+            <div className="absolute inset-0 bg-white dark:bg-gray-800 rounded-[2rem] border-4 border-orange-500 dark:border-blue-600 shadow-2xl transform transition-all duration-500 group-hover:scale-105 overflow-hidden">
               {/* Background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-gray-700 dark:to-gray-800"></div>
             </div>
 
             {/* Ảnh chính - OUT OF BOUNDS - Layer 3 */}
@@ -52,16 +52,16 @@ const Hero = () => {
             </div>
 
             {/* Floating decoration elements */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-orange-400 rounded-full opacity-20 blur-2xl animate-pulse"></div>
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-orange-400 rounded-full opacity-20 blur-2xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-            <div className="absolute -top-8 -right-8 w-20 h-20 bg-orange-300 rounded-full opacity-15 blur-xl animate-pulse" style={{ animationDelay: "0.5s" }}></div>
+            <div className="absolute -top-6 -left-6 w-24 h-24 bg-blue-400 dark:bg-orange-400 rounded-full opacity-20 blur-2xl animate-pulse"></div>
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-400 dark:bg-orange-400 rounded-full opacity-20 blur-2xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+            <div className="absolute -top-8 -right-8 w-20 h-20 bg-purple-400 dark:bg-orange-300 rounded-full opacity-15 blur-xl animate-pulse" style={{ animationDelay: "0.5s" }}></div>
           </div>
         </div>
       </div>
 
       {/* Scroll Down Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="flex flex-col items-center text-slate-400">
+        <div className="flex flex-col items-center text-slate-400 dark:text-gray-500 transition-colors duration-300">
           <span className="text-xs mb-2">Cuộn xuống</span>
           <svg
             className="w-6 h-6"
