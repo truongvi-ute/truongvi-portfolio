@@ -1,3 +1,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* Out of Bounds Effect - Allow overflow */
+.overflow-visible {
+  overflow: visible !important;
+}
+
+/* Enhance 3D effect */
+@layer utilities {
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Typing Animation Effect - Linux Style with Delete */
+@keyframes typing-delete {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 100%;
+  }
+  60% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  0%, 100% {
+    border-color: #3b82f6;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #3b82f6; /* Cursor dọc màu xanh */
+  animation: 
+    typing-delete 6s steps(40, end) infinite,
+    blink-caret 0.75s step-end infinite;
+  max-width: fit-content;
+}
+
+/* Font Consolas fallback */
+.font-mono {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
