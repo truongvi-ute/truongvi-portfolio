@@ -94,3 +94,12 @@ html {
 .font-mono {
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
 }
+
+/* Menu Icon Color - Light mode: Blue, Dark mode: Orange */
+.menu-icon-light {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(93%) saturate(1352%) hue-rotate(202deg) brightness(97%) contrast(97%);
+}
+
+.dark .menu-icon-light {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(89%) saturate(2063%) hue-rotate(360deg) brightness(102%) contrast(97%);
+}

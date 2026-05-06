@@ -12,15 +12,21 @@ const Hero = () => {
         <div className="order-2 md:order-1 text-center md:text-left">
           {/* Title với hiệu ứng typing - NGƯỢC LẠI */}
           <div className="mb-6 flex items-center justify-center md:justify-start">
-            <span className="text-slate-500 dark:text-gray-400 font-mono text-xl md:text-2xl font-semibold">&lt;</span>
+            <span className="text-slate-500 dark:text-gray-400 font-mono text-xl md:text-2xl font-semibold">
+              &lt;
+            </span>
             <span className="text-orange-500 dark:text-blue-600 font-mono text-xl md:text-2xl font-semibold typing-text">
               {personalInfo.title}
             </span>
-            <span className="text-slate-500 dark:text-gray-400 font-mono text-xl md:text-2xl font-semibold">/&gt;</span>
+            <span className="text-slate-500 dark:text-gray-400 font-mono text-xl md:text-2xl font-semibold">
+              /&gt;
+            </span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight transition-colors duration-300">
-            <span className="text-blue-600 dark:text-orange-500">{personalInfo.name}</span>
+            <span className="text-blue-600 dark:text-orange-500">
+              {personalInfo.name}
+            </span>
           </h1>
           <p className="text-xl text-slate-600 dark:text-gray-300 mb-8 max-w-lg leading-relaxed transition-colors duration-300">
             {personalInfo.tagline}
@@ -53,29 +59,15 @@ const Hero = () => {
 
             {/* Floating decoration elements */}
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-blue-400 dark:bg-orange-400 rounded-full opacity-20 blur-2xl animate-pulse"></div>
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-400 dark:bg-orange-400 rounded-full opacity-20 blur-2xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-            <div className="absolute -top-8 -right-8 w-20 h-20 bg-purple-400 dark:bg-orange-300 rounded-full opacity-15 blur-xl animate-pulse" style={{ animationDelay: "0.5s" }}></div>
+            <div
+              className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-400 dark:bg-orange-400 rounded-full opacity-20 blur-2xl animate-pulse"
+              style={{ animationDelay: "1s" }}
+            ></div>
+            <div
+              className="absolute -top-8 -right-8 w-20 h-20 bg-purple-400 dark:bg-orange-300 rounded-full opacity-15 blur-xl animate-pulse"
+              style={{ animationDelay: "0.5s" }}
+            ></div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="flex flex-col items-center text-slate-400 dark:text-gray-500 transition-colors duration-300">
-          <span className="text-xs mb-2">Cuộn xuống</span>
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
         </div>
       </div>
     </section>
