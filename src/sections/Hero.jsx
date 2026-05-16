@@ -29,7 +29,7 @@ const Hero = () => {
             </span>
           </h1>
           <p className="text-xl text-slate-600 dark:text-gray-300 mb-8 max-w-lg leading-relaxed transition-colors duration-300">
-            {personalInfo.tagline}
+            {personalInfo.about.education.school}
           </p>
         </div>
 

@@ -19,21 +19,10 @@ const About = () => {
                 {about.fullName}
               </h3>
               <div className="space-y-4">
-                <InfoRow label="Ngày sinh" value={about.dateOfBirth} />
-                <InfoRow label="Quê quán" value={about.hometown} />
-                <div className="flex flex-col py-3 border-b border-slate-200 dark:border-gray-700 last:border-0">
-                  <span className="text-slate-600 dark:text-gray-400 font-medium mb-2">Sở thích:</span>
-                  <div className="flex flex-wrap gap-2">
-                    {about.hobbies.map((hobby, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-blue-100 dark:bg-orange-900/30 text-blue-700 dark:text-orange-400 rounded-full text-sm font-medium border border-blue-200 dark:border-orange-700 transition-colors duration-300"
-                      >
-                        {hobby}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <InfoRow label="Date of Birth" value={about.dateOfBirth} />
+                <InfoRow label="Duration" value={about.education.timeline} />
+                <InfoRow label="GPA" value={about.education.gpa} />
+                <InfoRow label="Credits" value={about.education.credits} />
               </div>
             </div>
           </div>
@@ -42,7 +31,7 @@ const About = () => {
           <div className="lg:col-span-2">
             {/* Title */}
             <h3 className="text-2xl font-bold text-blue-600 dark:text-orange-500 mb-6 text-center">
-              Mục tiêu
+              Goals
             </h3>
             
             {/* Timeline Container */}
@@ -53,21 +42,21 @@ const About = () => {
               <div className="space-y-0">
                 {/* Short Term - Left */}
                 <TimelineGoalItem
-                  title="Ngắn hạn"
+                  title="Short-term"
                   items={about.goals.shortTerm}
                   position="left"
                 />
                 
                 {/* Mid Term - Right */}
                 <TimelineGoalItem
-                  title="Trung hạn"
+                  title="Mid-term"
                   items={about.goals.midTerm}
                   position="right"
                 />
                 
                 {/* Long Term - Left */}
                 <TimelineGoalItem
-                  title="Dài hạn"
+                  title="Long-term"
                   items={about.goals.longTerm}
                   position="left"
                 />

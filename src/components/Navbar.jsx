@@ -22,7 +22,6 @@ const Navbar = () => {
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
-    { name: "Education", href: "#education" },
     { name: "Certifications", href: "#certifications" },
     { name: "Contact", href: "#contact" },
     { name: "Download CV", href: personalInfo.cta.secondary.link, isDownload: true },
