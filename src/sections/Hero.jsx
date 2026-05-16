@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pt-32 md:pt-20 px-6 overflow-hidden transition-colors duration-300"
+      className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-gray-900 pt-32 md:pt-20 px-6 overflow-hidden transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* CỘT 1: GIỚI THIỆU NGẮN GỌN */}

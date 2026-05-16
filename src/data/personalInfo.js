@@ -1,21 +1,22 @@
 // Thông tin cá nhân
 export const personalInfo = {
   name: "Trường Vĩ",
-  fullName: "Nguyễn Đoàn Trường Vĩ",
   title: "Software Engineer",
-  role: "Full-stack Developer",
   
   // Hero Section - Giới thiệu ngắn gọn
   tagline: "Full-stack Developer đam mê xây dựng ứng dụng web và di động.",
 
   // About Me Section - Thông tin chi tiết
   about: {
-    intro:
-      "Mình là sinh viên năm cuối ngành Kỹ thuật Phần mềm tại Đại học Sư phạm Kỹ thuật TP.HCM (HCMUTE). Với niềm đam mê công nghệ và lập trình, mình đã tích lũy kinh nghiệm qua nhiều dự án thực tế.",
-    passion:
-      "Mình đặc biệt yêu thích việc xây dựng các ứng dụng full-stack với Java Spring Boot và React, cũng như phát triển ứng dụng di động. Hiện tại, mình đang mở rộng kiến thức về Cloud Engineering với AWS.",
-    goal:
-      "Mục tiêu của mình là trở thành một Software Engineer toàn diện, có khả năng thiết kế và triển khai các hệ thống phần mềm quy mô lớn, đồng thời không ngừng học hỏi các công nghệ mới.",
+    fullName: "Nguyễn Đoàn Trường Vĩ",
+    dateOfBirth: "11/07/2005",
+    hometown: "Bạc Liêu",
+    hobbies: ["Rubik", "Chơi game"],
+    goals: {
+      shortTerm: ["Tốt nghiệp với bằng xuất sắc","Tham gia nghiên cứu khoa học", "Tham gia thực tập"],
+      midTerm: ["Trở thành Full-stack Developer"],
+      longTerm: ["DevOps"]
+    },
   },
 
   // Thống kê

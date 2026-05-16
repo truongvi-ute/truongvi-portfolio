@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
+import About from "./sections/About";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <About />
         {/* Các section khác sẽ thêm vào sau */}
       </main>
     </div>
