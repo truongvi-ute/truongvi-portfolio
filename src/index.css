@@ -37,6 +37,20 @@ html {
   }
 }
 
+/* Cursor Blink Animation - Faster */
+@keyframes cursor-blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: cursor-blink 0.8s infinite;
+}
+
 /* Typing Animation Effect - Linux Style with Delete */
 @keyframes typing-delete {
   0% {

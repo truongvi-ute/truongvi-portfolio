@@ -1,198 +1,216 @@
 # 🌟 Trường Vĩ Portfolio
 
-Portfolio cá nhân của Nguyễn Đoàn Trường Vĩ - Full-stack Developer đam mê xây dựng ứng dụng web và di động.
+A modern, responsive personal portfolio website showcasing my skills, projects, and certifications as a Full-stack Developer.
 
 ![React](https://img.shields.io/badge/React-19.0.0-61DAFB?style=flat&logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-6.2.0-646CFF?style=flat&logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.19-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-## ✨ Tính năng
+## 🎯 About This Project
 
-- 🎨 **Dark/Light Mode** - Chuyển đổi theme mượt mà với Lottie animation
-- 📱 **Responsive Design** - Tối ưu cho mọi kích thước màn hình
-- ⚡ **Performance** - Xây dựng với Vite để tốc độ tải nhanh
-- 🎭 **Animations** - Hiệu ứng typing animation và Lottie animations
-- 🎯 **Modern UI** - Glass morphism navbar với floating design
-- 🖼️ **Out of Bounds Effect** - Avatar với hiệu ứng 3D độc đáo
+This portfolio website is built with modern web technologies to create a fast, responsive, and visually appealing showcase of my professional journey. It features smooth animations, dark mode support, and a clean, minimalist design.
 
-## 🛠️ Công nghệ sử dụng
+## ✨ Key Features
 
-- **Frontend Framework:** React 19
-- **Build Tool:** Vite 6
-- **Styling:** Tailwind CSS 3
-- **Animations:** Lottie React
-- **Deployment:** GitHub Pages
+### 🎨 Design & UI
+- **Dark/Light Mode**: Seamless theme switching with animated toggle
+- **Responsive Design**: Optimized for mobile, tablet, and desktop devices
+- **Glass Morphism**: Modern UI with backdrop blur effects
+- **Smooth Animations**: Typing effects, hover animations, and scroll-based interactions
+- **Inverted Color Scheme**: Blue/Orange theme that inverts between light and dark modes
 
-## 🚀 Cài đặt và Chạy
+### 📱 Sections
 
-### Yêu cầu
+#### Hero Section
+- Dynamic typing animation displaying multiple titles
+- Out-of-bounds profile image effect with 3D hover animation
+- Clean introduction with GPA and school information
 
+#### About Section
+- Facebook-style profile card with cover photo
+- Personal information and contact details
+- Career goals timeline (Short-term, Mid-term, Long-term)
+- Social media links (Facebook, GitHub, LinkedIn)
+
+#### Skills Section
+- Circular progress indicators for each skill
+- Categorized by: Languages, Frontend, Backend, Database, Tools, Other
+- Official brand colors for technology icons
+- 20+ technical skills displayed
+
+#### Projects Section
+- Timeline-based layout with vertical line and dots
+- Project cards with technology badges
+- Key features and highlights
+- Links to GitHub repositories (Backend & Frontend)
+
+#### Certifications Section
+- Interactive carousel with manual navigation
+- 7 certifications including TOEIC, AWS Academy, and Educative
+- Circular icons overlapping card tops
+- Links to verify credentials
+
+### � Technical Features
+- **Fast Performance**: Built with Vite for lightning-fast development and builds
+- **SEO Friendly**: Proper meta tags and semantic HTML
+- **Smooth Navigation**: Auto-updating URL hash based on scroll position
+- **CV Download**: Direct download functionality for resume
+- **Intersection Observer**: Smart section tracking for active navigation
+
+## 🛠️ Tech Stack
+
+- **Framework**: React 19
+- **Build Tool**: Vite 6
+- **Styling**: Tailwind CSS 3
+- **Icons**: React Icons
+- **Animations**: Lottie React
+- **Carousel**: Swiper
+- **Language**: JavaScript (ES6+)
+
+## 🚀 Getting Started
+
+### Prerequisites
 - Node.js >= 16.x
-- npm hoặc yarn
+- npm or yarn
 
-### Cài đặt
+### Installation
 
 ```bash
-# Clone repository
-git clone https://github.com/yourusername/truongvi-portfolio.git
+# Clone the repository
+git clone https://github.com/truongvi-ute/truongvi-portfolio.git
 
-# Di chuyển vào thư mục dự án
+# Navigate to project directory
 cd truongvi-portfolio
 
-# Cài đặt dependencies
+# Install dependencies
 npm install
 ```
 
-### Chạy Development Server
+### Development
 
 ```bash
+# Start development server
 npm run dev
 ```
 
-Mở trình duyệt và truy cập `http://localhost:5173`
+Visit `http://localhost:5173` to view the portfolio.
 
-### Build cho Production
+### Build for Production
 
 ```bash
+# Create production build
 npm run build
-```
 
-### Preview Production Build
-
-```bash
+# Preview production build
 npm run preview
 ```
 
-### Deploy lên GitHub Pages
+### Lint Code
 
 ```bash
-npm run deploy
+# Run ESLint
+npm run lint
 ```
 
-## 📁 Cấu trúc thư mục
+## 📁 Project Structure
 
 ```
 truongvi-portfolio/
 ├── public/
-│   └── favicon.png          # Favicon của website
+│   └── favicon.png
 ├── src/
 │   ├── assets/
-│   │   ├── animations/      # Lottie animation files
-│   │   │   ├── menu.json
-│   │   │   └── theme-toggle.json
-│   │   ├── hero.png         # Ảnh avatar
-│   │   └── logo.png         # Logo
+│   │   ├── animations/          # Lottie animation files
+│   │   ├── cv/                  # CV PDF file
+│   │   └── images/              # Images (hero, background, logo)
 │   ├── components/
-│   │   ├── MenuToggle.jsx   # Component menu toggle với animation
-│   │   ├── Navbar.jsx       # Navigation bar component
-│   │   └── ThemeToggle.jsx  # Dark/Light mode toggle
+│   │   ├── MenuToggle.jsx       # Mobile menu toggle with animation
+│   │   ├── Navbar.jsx           # Navigation bar with scroll tracking
+│   │   └── ThemeToggle.jsx      # Dark/light mode toggle
 │   ├── data/
-│   │   └── personalInfo.js  # Thông tin cá nhân tập trung
+│   │   └── personalInfo.js      # Centralized personal data
 │   ├── sections/
-│   │   └── Hero.jsx         # Hero section với typing animation
-│   ├── App.jsx              # Main App component
-│   ├── index.css            # Global styles và Tailwind directives
-│   └── main.jsx             # Entry point
+│   │   ├── About.jsx            # About section
+│   │   ├── Certifications.jsx   # Certifications carousel
+│   │   ├── Hero.jsx             # Hero section with typing animation
+│   │   ├── Projects.jsx         # Projects timeline
+│   │   └── Skills.jsx           # Skills with progress circles
+│   ├── App.jsx                  # Main app component
+│   ├── index.css                # Global styles and animations
+│   └── main.jsx                 # App entry point
+├── .gitignore
+├── eslint.config.js
 ├── index.html
 ├── package.json
-├── tailwind.config.js       # Tailwind configuration
-├── vite.config.js           # Vite configuration
-└── README.md
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+└── vite.config.js
 ```
 
-## 🎨 Tùy chỉnh
+## 🎨 Color Scheme
 
-### Thay đổi thông tin cá nhân
-
-Chỉnh sửa file `src/data/personalInfo.js`:
-
-```javascript
-export const personalInfo = {
-  name: "Tên của bạn",
-  fullName: "Họ và tên đầy đủ",
-  title: "Chức danh",
-  tagline: "Mô tả ngắn về bạn",
-  // ...
-};
-```
-
-### Thay đổi màu sắc
-
-Chỉnh sửa `tailwind.config.js` để thay đổi color scheme:
-
-```javascript
-theme: {
-  extend: {
-    colors: {
-      // Thêm màu tùy chỉnh của bạn
-    }
-  }
-}
-```
-
-### Thêm sections mới
-
-Tạo component mới trong `src/sections/` và import vào `App.jsx`:
-
-```javascript
-import NewSection from "./sections/NewSection";
-
-function App() {
-  return (
-    <div>
-      <Navbar />
-      <Hero />
-      <NewSection />
-    </div>
-  );
-}
-```
-
-## 🎯 Color Scheme
+The portfolio uses a unique inverted color scheme:
 
 ### Light Mode
-- **Primary:** Blue (#3b82f6)
-- **Background:** White/Blue gradient
-- **Text:** Slate gray
-- **Title (inverted):** Orange (#f97316)
+- **Primary Accent**: Blue (#3b82f6)
+- **Title Accent**: Orange (#f97316) - inverted
+- **Background**: Slate 50
+- **Text**: Slate gray
 
 ### Dark Mode
-- **Primary:** Orange (#f97316)
-- **Background:** Gray/Black gradient
-- **Text:** Light gray
-- **Title (inverted):** Blue (#3b82f6)
+- **Primary Accent**: Orange (#f97316)
+- **Title Accent**: Blue (#3b82f6) - inverted
+- **Background**: Gray 900
+- **Text**: Light gray
 
-## 📝 Scripts
+## 🎯 Customization
 
-| Command | Mô tả |
-|---------|-------|
-| `npm run dev` | Chạy development server |
-| `npm run build` | Build cho production |
-| `npm run preview` | Preview production build |
-| `npm run lint` | Chạy ESLint |
-| `npm run deploy` | Deploy lên GitHub Pages |
+To customize this portfolio for your own use:
+
+1. **Update Personal Information**: Edit `src/data/personalInfo.js`
+2. **Replace Images**: Update files in `src/assets/images/`
+3. **Update CV**: Replace PDF in `src/assets/cv/`
+4. **Modify Colors**: Adjust Tailwind config in `tailwind.config.js`
+
+## 📊 Performance
+
+- **Build Size**: ~13.7 MB (including high-quality images)
+- **Load Time**: Fast (Vite optimized)
+- **Lighthouse Score**: Expected 90+ on all metrics
 
 ## 🌐 Deployment
 
-Website được deploy tự động lên GitHub Pages khi chạy:
+This project can be deployed to any static hosting service:
 
+### Vercel
+```bash
+vercel deploy
+```
+
+### Netlify
+1. Build: `npm run build`
+2. Publish directory: `dist`
+
+### GitHub Pages
 ```bash
 npm run deploy
 ```
 
-Truy cập tại: `https://yourusername.github.io/truongvi-portfolio/`
-
 ## 📄 License
 
-MIT License - Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
+This project is open source and available under the MIT License.
 
-## 👤 Tác giả
+## 👤 Author
 
 **Nguyễn Đoàn Trường Vĩ**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+- 🎓 Student at HCMUTE (Ho Chi Minh City University of Technology and Education)
+- 💼 Aspiring Full-stack Developer
+- 📧 Email: nguyendoantruongvi11@gmail.com
+- 🔗 GitHub: [@truongvi-ute](https://github.com/truongvi-ute)
+- 💼 LinkedIn: [truongvi-ute](https://linkedin.com/in/truongvi-ute)
+- 📘 Facebook: [Nguyễn Đoàn Trường Vĩ](https://www.facebook.com/nguyen.oan.truong.vi)
 
 ## 🙏 Acknowledgments
 
@@ -200,7 +218,9 @@ MIT License - Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 - [Vite](https://vitejs.dev/) - Build tool
 - [React](https://react.dev/) - UI library
+- [React Icons](https://react-icons.github.io/react-icons/) - Icon library
+- [Swiper](https://swiperjs.com/) - Carousel library
 
 ---
 
-⭐ Nếu bạn thấy project này hữu ích, hãy cho một star nhé!
+⭐ If you find this project useful, please consider giving it a star!

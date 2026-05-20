@@ -1,7 +1,7 @@
 // Thông tin cá nhân
 export const personalInfo = {
   name: "Trường Vĩ",
-  title: "Software Engineer",
+  title: ["GPA: 3.63/ 4.0", "HCMUTE", "Software Engineer"],
 
   // About Me Section - Thông tin chi tiết
   about: {
@@ -10,13 +10,13 @@ export const personalInfo = {
     goals: {
       shortTerm: ["Graduate with honors","Participate in scientific research", "Join internship programs"],
       midTerm: ["Become a Full-stack Developer"],
-      longTerm: ["DevOps Engineer"]
+      longTerm: ["Become a DevOps Engineer"]
     },
     education: {
       school: "Đại học Công nghệ Kỹ thuật TP.HCM - HCMUTE",
       timeline: "2023 - 2027",
-      gpa: "3.59 / 4.0",
-      credits: "102 / 150"
+      gpa: "3.63 / 4.0",
+      credits: "116 / 150"
     },
   },
 
@@ -55,6 +55,110 @@ export const personalInfo = {
     ]
   },
 
+  // Projects Section
+  projects: [
+    {
+      id: 1,
+      name: "MAPIC - Social Network Mobile App",
+      period: "02 - 04/2026",
+      description: "A full-stack social network mobile application built with React Native for frontend and Spring Boot for backend. Features include user authentication, real-time messaging, location-based services, and social interactions.",
+      technologies: ["React Native", "Spring Boot", "REST API", "JWT", "Redis"],
+      techIcons: ["FaReact", "SiSpring", "SiPostman", "FaKey", "SiRedis"],
+      techColors: ["#61DAFB", "#6DB33F", "#FF6C37", "#FFD700", "#DC382D"],
+      links: {
+        githubBackend: "https://github.com/truongvi-ute/mapic_api.git",
+        githubFrontend: "https://github.com/truongvi-ute/mapic_app.git"
+      },
+      highlights: [
+        "Mobile app built with React Native for cross-platform compatibility",
+        "Backend API with Spring Boot, REST API, JWT authentication",
+        "Redis integration for caching and performance optimization",
+        "Full-stack development as part of a 2-member team"
+      ]
+    }
+  ],
+
+  // Certifications Section
+  certifications: [
+    {
+      id: 1,
+      name: "TOEIC Certificate",
+      issuer: "ETS",
+      date: "2024",
+      score: "675/990",
+      type: "image",
+      icon: "FaLanguage",
+      iconColor: "#4CAF50",
+      image: "/src/assets/certifications/toeic.jpg",
+      description: "English proficiency test"
+    },
+    {
+      id: 2,
+      name: "Learn Object-Oriented Programming in Java",
+      issuer: "Educative",
+      date: "May 2026",
+      type: "link",
+      icon: "FaJava",
+      iconColor: "#007396",
+      credentialUrl: "https://www.educative.io/verify-certificate/EJ786P5F7C",
+      description: "OOP fundamentals in Java"
+    },
+    {
+      id: 3,
+      name: "AWS Academy Graduate - Microservices and CI/CD Pipeline Builder",
+      issuer: "Amazon Web Services Training and Certification",
+      date: "Nov 2025",
+      type: "link",
+      icon: "FaAws",
+      iconColor: "#FF9900",
+      credentialUrl: "https://www.credly.com/users/nguyen-doan-truong-vi/badges",
+      description: "Microservices architecture and CI/CD pipelines"
+    },
+    {
+      id: 4,
+      name: "AWS Academy Graduate - Cloud Data Pipeline Builder",
+      issuer: "Amazon Web Services Training and Certification",
+      date: "Nov 2025",
+      type: "link",
+      icon: "FaAws",
+      iconColor: "#FF9900",
+      credentialUrl: "https://www.credly.com/users/nguyen-doan-truong-vi/badges",
+      description: "Building and managing cloud data pipelines"
+    },
+    {
+      id: 5,
+      name: "AWS Academy Graduate - Cloud Web Application Builder",
+      issuer: "Amazon Web Services Training and Certification",
+      date: "Nov 2025",
+      type: "link",
+      icon: "FaAws",
+      iconColor: "#FF9900",
+      credentialUrl: "https://www.credly.com/users/nguyen-doan-truong-vi/badges",
+      description: "Building scalable web applications on AWS"
+    },
+    {
+      id: 6,
+      name: "AWS Academy Graduate - Cloud Developing",
+      issuer: "Amazon Web Services Training and Certification",
+      date: "Oct 2025",
+      type: "link",
+      icon: "FaAws",
+      iconColor: "#FF9900",
+      credentialUrl: "https://www.credly.com/users/nguyen-doan-truong-vi/badges",
+      description: "Cloud application development on AWS"
+    },
+    {
+      id: 7,
+      name: "AWS Academy Graduate - Cloud Foundations",
+      issuer: "Amazon Web Services Training and Certification",
+      date: "Oct 2025",
+      type: "link",
+      icon: "FaAws",
+      iconColor: "#FF9900",
+      credentialUrl: "https://www.credly.com/users/nguyen-doan-truong-vi/badges",
+      description: "Cloud computing fundamentals"
+    }
+  ],
 
   // Call to action buttons
   cta: {
@@ -64,21 +168,19 @@ export const personalInfo = {
     },
     secondary: {
       text: "Download CV",
-      link: "/cv/Nguyen_Doan_Truong_Vi_CV.pdf",
+      link: "/cv/Nguyen-Doan-Truong-Vi-Intern.pdf",
     },
   },
 
-  // Social links
-  social: {
-    github: "https://github.com/truongvi",
-    linkedin: "https://linkedin.com/in/truongvi",
-    email: "truongvi@example.com",
-    phone: "+84 xxx xxx xxx",
-  },
-
-  // Ảnh profile
-  images: {
-    avatar: "/src/assets/avatar.png",
-    hero: "/src/assets/hero.jpg",
+  // Contact Info
+  contact: {
+    email: "nguyendoantruongvi11@gmail.com",
+    phone: "+84 886 456 740",
+    address: "Ho Chi Minh City, Vietnam",
+    social: {
+      facebook: "https://www.facebook.com/nguyen.oan.truong.vi?locale=vi_VN",
+      github: "https://github.com/truongvi-ute",
+      linkedin: "https://linkedin.com/in/truongvi-ute"
+    }
   },
 };

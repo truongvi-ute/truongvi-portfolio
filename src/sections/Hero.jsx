@@ -1,7 +1,39 @@
 import { personalInfo } from "../data/personalInfo";
-import profileImg from "../assets/hero.png";
+import profileImg from "../assets/images/hero.png";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const titles = personalInfo.title;
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentTitle = titles[currentTitleIndex];
+    let timeout;
+
+    if (!isDeleting && displayedText === currentTitle) {
+      // Đã gõ xong, dừng 2 giây rồi bắt đầu xóa
+      timeout = setTimeout(() => setIsDeleting(true), 2000);
+    } else if (isDeleting && displayedText === "") {
+      // Đã xóa xong, chuyển sang title tiếp theo
+      setIsDeleting(false);
+      setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
+    } else if (!isDeleting) {
+      // Đang gõ - tăng tốc độ để mượt hơn
+      timeout = setTimeout(() => {
+        setDisplayedText(currentTitle.substring(0, displayedText.length + 1));
+      }, 80); // Giảm từ 100ms xuống 80ms
+    } else {
+      // Đang xóa - nhanh hơn
+      timeout = setTimeout(() => {
+        setDisplayedText(currentTitle.substring(0, displayedText.length - 1));
+      }, 40); // Giảm từ 50ms xuống 40ms
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, currentTitleIndex, titles]);
+
   return (
     <section
       id="home"
@@ -12,14 +44,11 @@ const Hero = () => {
         <div className="order-2 md:order-1 text-center md:text-left">
           {/* Title với hiệu ứng typing - NGƯỢC LẠI */}
           <div className="mb-6 flex items-center justify-center md:justify-start">
-            <span className="text-slate-500 dark:text-gray-400 font-mono text-xl md:text-2xl font-semibold">
-              &lt;
-            </span>
-            <span className="text-orange-500 dark:text-blue-600 font-mono text-xl md:text-2xl font-semibold typing-text">
-              {personalInfo.title}
-            </span>
-            <span className="text-slate-500 dark:text-gray-400 font-mono text-xl md:text-2xl font-semibold">
-              /&gt;
+            <span className="font-mono text-xl md:text-2xl font-semibold">
+              <span className="text-slate-500 dark:text-gray-400">&lt;</span>
+              <span className="text-orange-500 dark:text-blue-600">{displayedText}</span>
+              <span className="text-orange-500 dark:text-blue-600 cursor-blink">|</span>
+              <span className="text-slate-500 dark:text-gray-400">/&gt;</span>
             </span>
           </div>
 
@@ -28,9 +57,11 @@ const Hero = () => {
               {personalInfo.name}
             </span>
           </h1>
-          <p className="text-xl text-slate-600 dark:text-gray-300 mb-8 max-w-lg leading-relaxed transition-colors duration-300">
+          <p className="text-xl text-slate-600 dark:text-gray-300 mb-4 max-w-lg leading-relaxed transition-colors duration-300">
             {personalInfo.about.education.school}
           </p>
+          
+          
         </div>
 
         {/* CỘT 2: ẢNH CHÂN DUNG - OUT OF BOUNDS EFFECT */}
@@ -49,7 +80,7 @@ const Hero = () => {
             <div className="absolute inset-0 flex items-end justify-center overflow-visible">
               <img
                 src={profileImg}
-                alt={personalInfo.fullName}
+                alt={personalInfo.about.fullName}
                 className="relative h-[150%] w-auto object-cover object-top transform transition-all duration-700 ease-out group-hover:scale-110 group-hover:translate-y-[-12px] z-10 rounded-[2rem]"
                 style={{
                   filter: "drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4))",
