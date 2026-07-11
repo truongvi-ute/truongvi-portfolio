@@ -1,6 +1,6 @@
 import { personalInfo } from "../data/personalInfo";
-import profileImg from "../assets/images/hero.png";
 import { useState, useEffect } from "react";
+import BadgeScene from "../components/BadgeScene";
 
 const Hero = () => {
   const titles = personalInfo.title;
@@ -37,12 +37,15 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-gray-900 pt-32 md:pt-20 px-6 overflow-hidden transition-colors duration-300"
+      className="relative min-h-screen flex items-center justify-center bg-slate-50 dark:bg-gray-900 pt-32 md:pt-20 px-6 overflow-hidden transition-colors duration-300"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* CỘT 1: GIỚI THIỆU NGẮN GỌN */}
-        <div className="order-2 md:order-1 text-center md:text-left">
-          {/* Title với hiệu ứng typing - NGƯỢC LẠI */}
+      {/* 3D BADGE - Full hero overlay, đè lên tất cả, không bị clip khi swing */}
+      <BadgeScene className="absolute inset-0 z-20 w-full h-full" />
+
+      {/* Text content - visible xuyên qua canvas trong suốt */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
+        <div className="text-center md:text-left max-w-xl">
+          {/* Title với hiệu ứng typing */}
           <div className="mb-6 flex items-center justify-center md:justify-start">
             <span className="font-mono text-xl md:text-2xl font-semibold">
               <span className="text-slate-500 dark:text-gray-400">&lt;</span>
@@ -60,45 +63,6 @@ const Hero = () => {
           <p className="text-xl text-slate-600 dark:text-gray-300 mb-4 max-w-lg leading-relaxed transition-colors duration-300">
             {personalInfo.about.education.school}
           </p>
-          
-          
-        </div>
-
-        {/* CỘT 2: ẢNH CHÂN DUNG - OUT OF BOUNDS EFFECT */}
-        <div className="order-1 md:order-2 flex justify-center items-center">
-          <div className="relative group w-56 h-56 md:w-72 md:h-72">
-            {/* Khung nền trang trí - Layer 1 */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 dark:from-orange-500 dark:to-orange-600 rounded-[2rem] transform rotate-3 transition-all duration-500 group-hover:rotate-6 group-hover:scale-105 shadow-2xl"></div>
-
-            {/* Khung chứa với border - Layer 2 - Màu viền cùng với title (ngược lại) */}
-            <div className="absolute inset-0 bg-white dark:bg-gray-800 rounded-[2rem] border-4 border-orange-500 dark:border-blue-600 shadow-2xl transform transition-all duration-500 group-hover:scale-105 overflow-hidden">
-              {/* Background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-gray-700 dark:to-gray-800"></div>
-            </div>
-
-            {/* Ảnh chính - OUT OF BOUNDS - Layer 3 */}
-            <div className="absolute inset-0 flex items-end justify-center overflow-visible">
-              <img
-                src={profileImg}
-                alt={personalInfo.about.fullName}
-                className="relative h-[150%] w-auto object-cover object-top transform transition-all duration-700 ease-out group-hover:scale-110 group-hover:translate-y-[-12px] z-10 rounded-[2rem]"
-                style={{
-                  filter: "drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4))",
-                }}
-              />
-            </div>
-
-            {/* Floating decoration elements */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-blue-400 dark:bg-orange-400 rounded-full opacity-20 blur-2xl animate-pulse"></div>
-            <div
-              className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-400 dark:bg-orange-400 rounded-full opacity-20 blur-2xl animate-pulse"
-              style={{ animationDelay: "1s" }}
-            ></div>
-            <div
-              className="absolute -top-8 -right-8 w-20 h-20 bg-purple-400 dark:bg-orange-300 rounded-full opacity-15 blur-xl animate-pulse"
-              style={{ animationDelay: "0.5s" }}
-            ></div>
-          </div>
         </div>
       </div>
     </section>
